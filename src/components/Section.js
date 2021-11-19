@@ -1,25 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Fade from 'react-reveal';
 function Section({title,description,image,leftBtnText,rightBtnText}) {
     return (
         <Container bgImage = {image}>
-            <ItemText>
-                <h1>{ title }</h1>
-                <p>{ description }</p>    
-            </ItemText>
+            <Fade bottom>
+                <ItemText>
+                    <h1>{ title }</h1>
+                    <p>{ description }</p>    
+                </ItemText>
+            </Fade>
             
-            <Buttons>
-                <ButtonGroup>
-                    <LeftButton>{leftBtnText?leftBtnText:"Custom Order"}</LeftButton>
+                <Buttons>
+                    <Fade bottom>
+            
+                        <ButtonGroup>
+                            <LeftButton>{leftBtnText?leftBtnText:"Custom Order"}</LeftButton>
 
-
-                    {rightBtnText?<RightButton>{rightBtnText}</RightButton>:null}
-                
-                </ButtonGroup>
-                <ImageButton src="/images/down-arrow.svg"/>
-            </Buttons>
-
+                            {rightBtnText?<RightButton>{rightBtnText}</RightButton>:null}
+                        
+                        </ButtonGroup>
+                    </Fade>
+                    <ImageButton src="/images/down-arrow.svg"/>
+                </Buttons>
         </Container>
     )
 }
@@ -51,7 +54,13 @@ const Container = styled.div`
 
 const ItemText = styled.div`
     text-align:center;
-    padding-top:80px;
+    margin-top:220px;
+    p{
+        font-size:17px;
+    }
+    h1{
+        font-size:35px;
+    }
 `;
 
 

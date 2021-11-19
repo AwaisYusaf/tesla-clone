@@ -11,6 +11,13 @@ body {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes myfirstanimation {
   0%,
   20%,
